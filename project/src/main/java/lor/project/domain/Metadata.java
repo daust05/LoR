@@ -8,6 +8,5 @@ public class Metadata {
     String developerCode;
 
     public Metadata() {
-        developerCode = ;
     }
 }
