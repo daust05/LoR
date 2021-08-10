@@ -8,6 +8,6 @@ public class Metadata {
     String developerCode;
 
     public Metadata() {
-        developerCode = "RGAPI-54041b08-c236-44db-978c-c52e5267ebd2";
+        developerCode = ;
     }
 }
