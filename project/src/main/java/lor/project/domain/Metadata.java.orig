@@ -13,8 +13,14 @@ public class Metadata {
         return developerCode;
     }
 
+<<<<<<< HEAD
     public static void setDeveloperCode(String code){
         developerCode = code;
     }
 
 }
+=======
+    public Metadata() {
+    }
+}
+>>>>>>> d276e7a8962742e8c2c075e676cb1e2b1bf105db
