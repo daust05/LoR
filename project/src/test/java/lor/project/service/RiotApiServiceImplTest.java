@@ -19,4 +19,9 @@ class RiotApiServiceImplTest {
         Assertions.assertThat(summoner.getName()).isEqualTo("룰 룽");
     }
 
+    @Test
+    public void findMatchesByPuuid() throws IOException {
+        Summoner summoner = riotApiService.findSummonerByName("룰 룽");
+    }
+
 }

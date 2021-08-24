@@ -10,11 +10,16 @@
     <div class="py-5 text-center">
         <h2>LOR 검색</h2>
     </div>
-    <form action="item.html" th:action method="post" accept-charset="UTF-8">
+    <form action="user.html" th:action method="post" accept-charset="UTF-8">
         <div>
             <label for="userName">사용자 닉네임</label>
             <input type="text" id="userName" name="userName" class="form-control"
                    placeholder="SUMMONER NAME">
+        </div>
+        <div>
+            <label for="apiCode">API CODE</label>
+            <input type="text" id="apiCode" name="apiCode" class="form-control"
+                   placeholder="RIOT API DEVELOPER CODE">
         </div>
         <hr class="my-4">
         <div>

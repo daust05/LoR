@@ -3,11 +3,18 @@ package lor.project.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Entity;
+
 @Getter @Setter
 public class Metadata {
-    String developerCode;
+    static String developerCode;
 
-    public Metadata() {
-        developerCode = "RGAPI-54041b08-c236-44db-978c-c52e5267ebd2";
+    public static String getDeveloperCode(){
+        return developerCode;
     }
+
+    public static void setDeveloperCode(String code){
+        developerCode = code;
+    }
+
 }

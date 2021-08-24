@@ -4,31 +4,31 @@ import lombok.extern.slf4j.Slf4j;
 import lor.project.domain.Metadata;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
 @Controller
 @RequestMapping("/lor")
 public class MainController {
-    Metadata metadata = new Metadata();
-    static String baseUrl = "lor/";
 
     @GetMapping
-    public String index(Model model){
-        model.addAttribute("developerCode",metadata.getDeveloperCode());
-        return baseUrl+"main";
+    public String home(){
+        return "/lor/main";
     }
     @PostMapping
-    public String searchUser(String userName, RedirectAttributes redirectAttributes){
-        redirectAttributes.addAttribute("userName",userName);
-        return "redirect:/lor/{userName}";
+    public String searchUser(@RequestParam String userName,
+                             @RequestParam String apiCode,
+                             Model model){
+        log.info("userName = " + userName);
+        model.addAttribute("userName",userName);
+        Metadata.setDeveloperCode(apiCode);
+
+        return "/lor/user";
     }
 
-    @GetMapping("/{userName}")
+    @GetMapping("/user")
     public String user(){
-        return baseUrl+"user";
+        return "/lor/user";
     }
 }
